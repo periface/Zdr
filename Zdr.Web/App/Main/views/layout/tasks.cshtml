@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+<div ng-controller="app.views.tasks as vm">
+    <div class="col-sm-2" >
+        <div ng-repeat="task in vm.taskQueue" class="jumbotron jumboSmall">
+            <h5>Publicando</h5>
+            <q ng-bind="task.content"></q>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': task.percentageDone}">
+                            <span ng-bind="task.percentageDone" class="sr-only"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+﻿@{ Layout = null;}
+<div ng-controller="app.views.activity as vm">
+    <div class="col-md-4 col-sm-12">
+        <div class="list-group">
+            <div ng-repeat="activity in vm.activity" class="list-group-item">
+                <h5 class="list-group-item-heading">{{activity.user}} : Publico</h5>
+                <p class="list-group-item-text">
+                    {{activity.content}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

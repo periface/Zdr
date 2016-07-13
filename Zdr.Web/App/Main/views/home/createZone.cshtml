@@ -1,0 +1,30 @@
+﻿<div ng-controller="app.views.createZone as vm">
+
+    <form ng-submit="vm.addZdr(this)">
+        <fieldset>
+            <legend>Agregar nueva Zdr <button class="btn btn-xs pull-right btn-success">Actividad Sospechosa</button></legend>
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <textarea class="form-control" ng-model="vm.zdr.comment" placeholder="Comentario"></textarea>
+
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label">
+                        Imagen
+                    </label>
+                    <input type="file" ng-model="vm.zdr.image" accept="image/*" class="form-control" />
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label">
+                        Video
+                    </label>
+                    <input type="file" ng-model="vm.zdr.video" accept="video/*" class="form-control" />
+                </div>
+                <div class="col-sm-12 form-group">
+                    <button class="btn btn-primary btn-sm" type="submit">Agregar</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
