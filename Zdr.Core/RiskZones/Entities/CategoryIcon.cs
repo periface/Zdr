@@ -11,6 +11,15 @@ namespace Zdr.RiskZones.Entities
         {
 
         }
-        public string IconUrl { get; set; }
+        public string IconUrl { get; protected set; }
+
+        public static CategoryIcon CreateCategoryIcon(string iconUrl, MapZoneCategory mapZoneCategory)
+        {
+            return new CategoryIcon()
+            {
+                IconUrl = iconUrl,
+                MapZoneCategory = mapZoneCategory
+            };
+        }
     }
 }

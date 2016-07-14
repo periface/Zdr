@@ -90,12 +90,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Locations\Entities\City.cs" />
+    <Compile Include="Locations\Entities\Country.cs" />
+    <Compile Include="Locations\Entities\State.cs" />
     <Compile Include="RiskZones\DataService\IRzZoneManager.cs" />
     <Compile Include="RiskZones\DataService\RzZoneManager.cs" />
     <Compile Include="RiskZones\Entities\CategoryIcon.cs" />
     <Compile Include="RiskZones\Entities\MapZone.cs" />
     <Compile Include="RiskZones\Entities\MapZoneCategory.cs" />
+    <Compile Include="RiskZones\HelperEntities\MapZoneEntityCreatingObject.cs" />
     <Compile Include="RiskZones\Entities\MapZoneGallery.cs" />
+    <Compile Include="RiskZones\Enums\ZoneType.cs" />
     <Compile Include="RiskZones\MapZoneManager.cs" />
     <Compile Include="RiskZones\Policy\IMapZonePolicy.cs" />
     <Compile Include="RiskZones\Policy\MapZonePolicy.cs" />
@@ -144,7 +149,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\Source\Zdr-ja.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Locations\DataService\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

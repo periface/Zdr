@@ -176,8 +176,21 @@
     <Compile Include="Migrations\201605041151380_UserAccount_And_Notification_Changes.Designer.cs">
       <DependentUpon>201605041151380_UserAccount_And_Notification_Changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607141439234_Initial.cs" />
+    <Compile Include="Migrations\201607141439234_Initial.Designer.cs">
+      <DependentUpon>201607141439234_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607141537251_CountryStateCity.cs" />
+    <Compile Include="Migrations\201607141537251_CountryStateCity.Designer.cs">
+      <DependentUpon>201607141537251_CountryStateCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607141541154_CitiesAndZones.cs" />
+    <Compile Include="Migrations\201607141541154_CitiesAndZones.Designer.cs">
+      <DependentUpon>201607141541154_CitiesAndZones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\SeedData\DefaultStatesAndCities.cs" />
     <Compile Include="ZdrDataModule.cs" />
     <Compile Include="Migrations\SeedData\DefaultEditionsCreator.cs" />
     <Compile Include="Migrations\SeedData\DefaultLanguagesCreator.cs" />
@@ -243,6 +256,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605041151380_UserAccount_And_Notification_Changes.resx">
       <DependentUpon>201605041151380_UserAccount_And_Notification_Changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607141439234_Initial.resx">
+      <DependentUpon>201607141439234_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607141537251_CountryStateCity.resx">
+      <DependentUpon>201607141537251_CountryStateCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607141541154_CitiesAndZones.resx">
+      <DependentUpon>201607141541154_CitiesAndZones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

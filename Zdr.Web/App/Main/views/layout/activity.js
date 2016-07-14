@@ -11,7 +11,33 @@
                     hasImage: false,
                     hasVideo: true,
                     pointId: true
-                });
+                }, {
+                    user: "User1",
+                    content: "Lorem ipsum dolor sit ...",
+                    hasImage: false,
+                    hasVideo: true,
+                    pointId: true
+                }, {
+                    user: "User1",
+                    content: "Lorem ipsum dolor sit ...",
+                    hasImage: false,
+                    hasVideo: true,
+                    pointId: true
+                },
+                 {
+                     user: "User1",
+                     content: "Lorem ipsum dolor sit ...",
+                     hasImage: false,
+                     hasVideo: true,
+                     pointId: true
+                 },
+                  {
+                      user: "User1",
+                      content: "Lorem ipsum dolor sit ...",
+                      hasImage: false,
+                      hasVideo: true,
+                      pointId: true
+                  });
             }
             init();
         }]);

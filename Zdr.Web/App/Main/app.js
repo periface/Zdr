@@ -9,6 +9,7 @@
         'ui.bootstrap',
         'ui.jq',
         'uiGmapgoogle-maps',
+        'ngFileUpload',
         'abp'
     ]);
 

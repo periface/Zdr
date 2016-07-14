@@ -1,5 +1,5 @@
-﻿using Zdr.EntityFramework;
-using EntityFramework.DynamicFilters;
+﻿using EntityFramework.DynamicFilters;
+using Zdr.EntityFramework;
 
 namespace Zdr.Migrations.SeedData
 {
@@ -20,6 +20,7 @@ namespace Zdr.Migrations.SeedData
             new DefaultLanguagesCreator(_context).Create();
             new HostRoleAndUserCreator(_context).Create();
             new DefaultSettingsCreator(_context).Create();
+            new DefaultStatesAndCities(_context).Create();
         }
     }
 }

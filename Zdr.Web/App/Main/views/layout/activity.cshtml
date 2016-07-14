@@ -1,6 +1,9 @@
 ﻿@{ Layout = null;}
-<div ng-controller="app.views.activity as vm">
-    <div class="col-md-4 col-sm-12">
+
+<div style="" class="col-md-4 col-sm-12">
+    <h4>Actividad reciente</h4>
+    <div class="well well-sm" style="min-height: 600px;max-height: 800px;" ng-controller="app.views.activity as vm">
+
         <div class="list-group">
             <div ng-repeat="activity in vm.activity" class="list-group-item">
                 <h5 class="list-group-item-heading">{{activity.user}} : Publico</h5>
@@ -10,4 +13,6 @@
             </div>
         </div>
     </div>
+
+    
 </div>

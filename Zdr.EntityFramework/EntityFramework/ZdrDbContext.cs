@@ -2,6 +2,7 @@
 using System.Data.Common;
 using System.Data.Entity;
 using Zdr.Authorization.Roles;
+using Zdr.Locations.Entities;
 using Zdr.MultiTenancy;
 using Zdr.RiskZones.Entities;
 using Zdr.Users;
@@ -12,6 +13,12 @@ namespace Zdr.EntityFramework
     {
         //TODO: Define an IDbSet for your Entities...
         public IDbSet<MapZone> MapZones { get; set; }
+        public IDbSet<MapZoneCategory> MapZoneCategories { get; set; }
+        public IDbSet<MapZoneGallery> MapZoneGalleries { get; set; }
+        public IDbSet<CategoryIcon> CategoryIcons { get; set; }
+        public IDbSet<Country> Countries { get; set; }
+        public IDbSet<State> States { get; set; }
+        public IDbSet<City> Cities { get; set; }
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not

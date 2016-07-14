@@ -45,6 +45,8 @@ namespace Zdr.Web
 
                         "~/Scripts/lodash.js",
                         "~/Scripts/angular.min.js",
+                        "~/Scripts/fileupload/ng-file-upload-shim.min.js",
+                        "~/Scripts/fileupload/ng-file-upload.min.js",
                         "~/Scripts/angular-animate.min.js",
                         "~/Scripts/angular-sanitize.min.js",
                         "~/Scripts/angular-ui-router.min.js",
@@ -53,6 +55,7 @@ namespace Zdr.Web
                         "~/Scripts/angular-ui/ui-utils.min.js",
                         "~/Scripts/angular-simple-logger.js",
                         "~/Scripts/angular-google-maps.min.js",
+                        "~/Scripts/angular-google-maps-geocoder.js",
                         "~/Abp/Framework/scripts/abp.js",
                         "~/Abp/Framework/scripts/libs/abp.jquery.js",
                         "~/Abp/Framework/scripts/libs/abp.toastr.js",

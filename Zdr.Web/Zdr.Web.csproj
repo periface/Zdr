@@ -310,6 +310,7 @@
       <DependentUpon>main.css</DependentUpon>
     </Content>
     <Content Include="App\Main\services\appSession.js" />
+    <Content Include="App\Main\services\geoCodePosition.js" />
     <Content Include="App\Main\views\directives\autoFocus.js" />
     <Content Include="App\Main\views\directives\enterKey.js" />
     <Content Include="App\Main\views\home\createZone.js" />
@@ -460,6 +461,15 @@
     <Content Include="App\Main\views\layout\activity.cshtml" />
     <Content Include="App\Main\views\home\createZone.cshtml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\fileupload\FileAPI.flash.swf" />
+    <Content Include="Scripts\fileupload\FileAPI.js" />
+    <Content Include="Scripts\fileupload\FileAPI.min.js" />
+    <Content Include="Scripts\fileupload\ng-file-upload-all.js" />
+    <Content Include="Scripts\fileupload\ng-file-upload-all.min.js" />
+    <Content Include="Scripts\fileupload\ng-file-upload-shim.js" />
+    <Content Include="Scripts\fileupload\ng-file-upload-shim.min.js" />
+    <Content Include="Scripts\fileupload\ng-file-upload.js" />
+    <Content Include="Scripts\fileupload\ng-file-upload.min.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-et.js" />
@@ -1262,6 +1272,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\InputBuilder.cs" />
     <Compile Include="Models\Account\LoginFormViewModel.cs" />
     <Compile Include="Models\Account\LoginViewModel.cs" />
     <Compile Include="Models\Account\RegisterResultViewModel.cs" />
