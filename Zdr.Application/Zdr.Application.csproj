@@ -98,6 +98,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RiskZones\Dtos\RiskZoneDetailsDto.cs" />
+    <Compile Include="RiskZones\Dtos\RiskZonePositionDto.cs" />
+    <Compile Include="RiskZones\IRiskZoneAppService.cs" />
+    <Compile Include="RiskZones\RiskZoneAppService.cs" />
     <Compile Include="ZdrApplicationModule.cs" />
     <Compile Include="ZdrAppServiceBase.cs" />
     <Compile Include="MultiTenancy\Dto\CreateTenantInput.cs" />
@@ -131,6 +135,7 @@
       <Name>Zdr.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

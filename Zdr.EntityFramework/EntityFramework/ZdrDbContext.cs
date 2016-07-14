@@ -1,7 +1,9 @@
-﻿using System.Data.Common;
-using Abp.Zero.EntityFramework;
+﻿using Abp.Zero.EntityFramework;
+using System.Data.Common;
+using System.Data.Entity;
 using Zdr.Authorization.Roles;
 using Zdr.MultiTenancy;
+using Zdr.RiskZones.Entities;
 using Zdr.Users;
 
 namespace Zdr.EntityFramework
@@ -9,7 +11,7 @@ namespace Zdr.EntityFramework
     public class ZdrDbContext : AbpZeroDbContext<Tenant, Role, User>
     {
         //TODO: Define an IDbSet for your Entities...
-
+        public IDbSet<MapZone> MapZones { get; set; }
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not
