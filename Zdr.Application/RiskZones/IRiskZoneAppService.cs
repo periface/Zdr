@@ -1,5 +1,5 @@
-﻿using System.Threading.Tasks;
-using Abp.Application.Services;
+﻿using Abp.Application.Services;
+using System.Threading.Tasks;
 using Zdr.RiskZones.Dtos;
 
 namespace Zdr.RiskZones
@@ -8,6 +8,6 @@ namespace Zdr.RiskZones
     {
         Task<int> CreateZone(RiskZoneInputDto input);
         RiskZoneInputDto GetZoneForEdit(int id);
-        RiskZonesOutput GetRiskZonesByStateAndCity(string state, string city);
+        RiskZonesOutput GetRiskZonesByCity(string cityCode);
     }
 }

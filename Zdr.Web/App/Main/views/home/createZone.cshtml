@@ -1,5 +1,5 @@
 ﻿
-<form name="zdrCreateForm" novalidate ng-submit="zdrCreateForm.$valid && vm.addZdr()">
+<form name="zdrCreateForm" novalidate>
     <div class="modal-header">
         <h4 class="modal-title">
             <span>Crear Zona</span>
@@ -35,6 +35,6 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
-        <button type="submit" class="btn btn-primary blue" ng-click="vm.addZdr()" ng-disabled="tenantCreateForm.$invalid"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        <button type="submit" class="btn btn-primary blue" ng-disabled="tenantCreateForm.$invalid" ng-click="vm.addZdr()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
     </div>
 </form>

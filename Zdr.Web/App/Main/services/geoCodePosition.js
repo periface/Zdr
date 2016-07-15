@@ -4,11 +4,11 @@
     function () {
 
         var geoCoderInstance;
-        var codeLatLngForState = function (lat, lng, callback) {
+        var codeLatLngForState = function(lat, lng, callback) {
             var city;
             // ReSharper disable once UseOfImplicitGlobalInFunctionScope
             var latlng = new google.maps.LatLng(lat, lng);
-            geoCoderInstance.geocode({ 'latLng': latlng }, function (results, status) {
+            geoCoderInstance.geocode({ 'latLng': latlng }, function(results, status) {
                 // ReSharper disable once UseOfImplicitGlobalInFunctionScope
                 if (status === google.maps.GeocoderStatus.OK) {
                     if (results[1]) {
@@ -35,21 +35,23 @@
                     callback(status, null);
                 }
             });
-        }
-        var codeLatLngForBoth = function (lat, lng, callback) {
+        };
+        var codeLatLngForBoth = function(lat, lng, callback) {
             var locationData = {
                 City: "",
-                State: ""
+                State: "",
+                Country: ""
             };
             // ReSharper disable once UseOfImplicitGlobalInFunctionScope
             var latlng = new google.maps.LatLng(lat, lng);
-            geoCoderInstance.geocode({ 'latLng': latlng }, function (results, status) {
+            geoCoderInstance.geocode({ 'latLng': latlng }, function(results, status) {
                 // ReSharper disable once UseOfImplicitGlobalInFunctionScope
                 if (status === google.maps.GeocoderStatus.OK) {
                     if (results[1]) {
                         //formatted address
                         //alert(results[0].formatted_address);
                         //find country name
+                        console.log(results);
                         for (var i = 0; i < results[0].address_components.length; i++) {
                             for (var b = 0; b < results[0].address_components[i].types.length; b++) {
 
@@ -60,6 +62,10 @@
                                 } else {
                                     if (results[0].address_components[i].types[b] === "administrative_area_level_2") {
                                         locationData.City = results[0].address_components[i];
+                                    } else {
+                                        if (results[0].address_components[i].types[b] === "country") {
+                                            locationData.Country = results[0].address_components[i];
+                                        }
                                     }
                                 }
                             }
@@ -73,12 +79,12 @@
                     callback(status, null);
                 }
             });
-        }
-        var codeLatLng = function (lat, lng, callback) {
+        };
+        var codeLatLng = function(lat, lng, callback) {
             var city;
             // ReSharper disable once UseOfImplicitGlobalInFunctionScope
             var latlng = new google.maps.LatLng(lat, lng);
-            geoCoderInstance.geocode({ 'latLng': latlng }, function (results, status) {
+            geoCoderInstance.geocode({ 'latLng': latlng }, function(results, status) {
                 // ReSharper disable once UseOfImplicitGlobalInFunctionScope
                 if (status === google.maps.GeocoderStatus.OK) {
                     if (results[1]) {
@@ -105,7 +111,7 @@
                     callback(status, null);
                 }
             });
-        }
+        };
         function formatCurrentPosition(position, scope, callback) {
             var lat;
             var lng;
@@ -134,6 +140,7 @@
                             callback(error, null);
                         }
                     });
+                    break;
                 default:
                     codeLatLngForBoth(lat, lng, function (error, result) {
                         if (!error) {
@@ -146,55 +153,56 @@
             }
 
         }
-        this.getCity = function (position, geoCoder, callback) {
+
+        this.getCity = function(position, geoCoder, callback) {
             geoCoderInstance = geoCoder;
-            formatCurrentPosition(position, "City", function (error, result) {
+            formatCurrentPosition(position, "City", function(error, result) {
                 if (!error) {
                     callback(null, result);
                 } else {
                     callback(error, null);
                 }
             });
-        }
-        this.getState = function (position, geoCoder, callback) {
+        };
+        this.getState = function(position, geoCoder, callback) {
             geoCoderInstance = geoCoder;
-            formatCurrentPosition(position, "State", function (error, result) {
+            formatCurrentPosition(position, "State", function(error, result) {
                 if (!error) {
                     callback(null, result);
                 } else {
                     callback(error, null);
                 }
             });
-        }
-        this.getCityAndState = function (position, geoCoder, callback) {
+        };
+        this.getCityAndState = function(position, geoCoder, callback) {
             geoCoderInstance = geoCoder;
-            formatCurrentPosition(position, "Both", function (error, result) {
+            formatCurrentPosition(position, "Both", function(error, result) {
                 if (!error) {
                     callback(null, result);
                 } else {
                     callback(error, null);
                 }
             });
-        }
-        this.getCityAndStateByCoords = function (lat, lng, geoCoder, callback) {
+        };
+        this.getCityAndStateByCoords = function(lat, lng, geoCoder, callback) {
             geoCoderInstance = geoCoder;
             var position = {
                 lat: lat,
                 lng: lng
-            }
-            formatCurrentPosition(position, "Both", function (error, result) {
+            };
+            formatCurrentPosition(position, "Both", function(error, result) {
                 if (!error) {
                     callback(null, result);
                 } else {
                     callback(error, null);
                 }
             });
-        }
+        };
         return {
             getCity: this.getCity,
             getState: this.getState,
             getBoth: this.getCityAndState,
             getBothByCoords: this.getCityAndStateByCoords
-        }
+        };
     }]);
 })();

@@ -20,7 +20,8 @@ namespace Zdr.Migrations.SeedData
             new DefaultLanguagesCreator(_context).Create();
             new HostRoleAndUserCreator(_context).Create();
             new DefaultSettingsCreator(_context).Create();
-            new DefaultStatesAndCities(_context).Create();
+            //new DefaultStatesAndCities(_context).Create();
+            new DefaultCategories(_context).Create();
         }
     }
 }

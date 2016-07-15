@@ -26,7 +26,7 @@ namespace Zdr.Web.Helpers
                 }
                 else
                 {
-                    var propertyName = "[" + prefix + "]" + props.Name;
+                    var propertyName = prefix + "[" + props.Name + "]";
                     stringValue = request.Params.Get(propertyName);
                 }
 

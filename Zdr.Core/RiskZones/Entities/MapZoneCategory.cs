@@ -21,7 +21,8 @@ namespace Zdr.RiskZones.Entities
             {
                 CategoryName = categoryName,
                 CategoryDescription = categoryDescription,
-                CategoryImage = categoryImage
+                CategoryImage = categoryImage,
+
             };
         }
     }

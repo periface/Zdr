@@ -10,53 +10,63 @@ namespace Zdr.RiskZones.DataService
     public class RzZoneManager : DomainService, IRzZoneManager
     {
         private readonly IRepository<MapZone> _mapZoneRepository;
+        private readonly IRepository<MapZoneCategory> _mapZoneCategoryRepository;
+        private readonly IRepository<MapZoneGallery> _mapZoneGalleryRepository;
         private readonly IMapZonePolicy _mapZonePolicy;
-        public RzZoneManager(IRepository<MapZone> mapZoneRepository, IMapZonePolicy mapZonePolicy)
+        public RzZoneManager(IRepository<MapZone> mapZoneRepository, IMapZonePolicy mapZonePolicy, IRepository<MapZoneCategory> mapZoneCategoryRepository, IRepository<MapZoneGallery> mapZoneGalleryRepository)
         {
             _mapZoneRepository = mapZoneRepository;
             _mapZonePolicy = mapZonePolicy;
+            _mapZoneCategoryRepository = mapZoneCategoryRepository;
+            _mapZoneGalleryRepository = mapZoneGalleryRepository;
         }
 
-        public async Task<int> AddZone(MapZone zone)
+        public virtual async Task<int> AddZone(MapZone zone)
         {
             _mapZonePolicy.CheckZoneData(zone);
             var id = await _mapZoneRepository.InsertOrUpdateAndGetIdAsync(zone);
             return id;
         }
 
-        public Task<MapZone> GetZone(int zoneId)
+        public virtual MapZoneCategory GetCategory(int categoryId)
+        {
+            var category = _mapZoneCategoryRepository.FirstOrDefault(a => a.Id == categoryId);
+            return category;
+        }
+
+        public virtual Task<MapZone> GetZone(int zoneId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<List<MapZone>> GetZones(bool includeUser = false)
+        public virtual Task<List<MapZone>> GetZones(bool includeUser = false)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task RemoveZone(MapZone zone)
+        public virtual Task RemoveZone(MapZone zone)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task RemoveZone(int zoneId)
+        public virtual Task RemoveZone(int zoneId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<List<MapZoneGallery>> GetMapZoneGallery(MapZone mapZone)
+        public virtual Task<List<MapZoneGallery>> GetMapZoneGallery(MapZone mapZone)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<List<MapZoneGallery>> GetMapZoneGallery(int mapZoneId)
+        public virtual Task<List<MapZoneGallery>> GetMapZoneGallery(int mapZoneId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task AddImageToGallery(MapZoneGallery image)
+        public virtual async Task AddImageToGallery(MapZoneGallery image)
         {
-            throw new System.NotImplementedException();
+            await _mapZoneGalleryRepository.InsertOrUpdateAndGetIdAsync(image);
         }
     }
 }

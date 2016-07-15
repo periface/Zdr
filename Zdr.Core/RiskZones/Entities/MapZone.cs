@@ -16,12 +16,11 @@ namespace Zdr.RiskZones.Entities
         public virtual CategoryIcon CategoryIcon { get; protected set; }
         public string Content { get; protected set; }
         public int ZoneType { get; protected set; }
-        public float Latitude { get; protected set; }
-        public float Longitude { get; protected set; }
+        public string Latitude { get; protected set; }
+        public string Longitude { get; protected set; }
         public virtual User User { get; protected set; }
         public virtual ICollection<MapZoneGallery> MapZoneGalleries { get; set; }
-
-        public static MapZone CreateZone(MapZoneEntityCreatingObject input)
+        public static MapZone CreateZone(MapZoneEntityCreationObject input)
         {
             return new MapZone()
             {

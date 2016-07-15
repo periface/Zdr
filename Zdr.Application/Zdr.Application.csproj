@@ -99,6 +99,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Maps\Dtos\CategoriesOutput.cs" />
+    <Compile Include="Maps\IMapsAppService.cs" />
     <Compile Include="RiskZones\Dtos\RiskZoneInputDto.cs" />
     <Compile Include="RiskZones\Dtos\RiskZonesOutput.cs" />
     <Compile Include="RiskZones\Dtos\RiskZoneDetailsDto.cs" />
@@ -133,6 +135,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ImageSaver\ImageSaver.csproj">
+      <Project>{EE58BADA-B4DE-45D4-AD78-4D7235C26A82}</Project>
+      <Name>ImageSaver</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Zdr.Core\Zdr.Core.csproj">
       <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
       <Name>Zdr.Core</Name>
