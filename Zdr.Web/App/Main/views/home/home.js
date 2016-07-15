@@ -3,6 +3,8 @@
     angular.module('app').controller(controllerId, [
         '$scope', 'uiGmapGoogleMapApi', '$filter', "geoCoder", '$uibModal', 'abp.services.app.riskZone', function ($scope, uiGmapGoogleMapApi, $filter, geoCoder, $uibModal,zoneService) {
             var vm = this;
+
+            var prevCity;
             vm.showError = true;
             vm.changeCenter = function(data) {
                 vm.map.center.latitude = data.center.lat();
@@ -46,10 +48,9 @@
             };
             vm.setMarker = function(data) {
                 geoCoder.getBothByCoords(data.center.lat(), data.center.lng(), geoCoderInstance, function(error, result) {
-                    console.log(result);
-                    console.log(error);
                     vm.userLocation.State = result.State;
                     vm.userLocation.City = result.City === "" ? "Ciudad no detectada" : result.City;
+                    getZonesByCity(vm.userLocation.City.short_name);
                 });
             };
             var placeMarker = function(id,lat, lng) {
@@ -68,7 +69,23 @@
                 });
                 console.log(vm.markers);
             };
+            var getZonesByCity = function (city) {
+                if (city !== prevCity) {
+
+                    vm.markers = [];
+                    zoneService.getRiskZonesByCity(city).then(function(response) {
+                        var markers = response.data.positions;
+                        console.log(markers);
+                        for (var i = 0; i < markers.length; i++) {
+                            console.log("Trigger");
+                            placeMarker(markers[i].id, markers[i].latitude, markers[i].longitude);
+                        }
+                    });
+                }
+                prevCity = city;
+            }
             vm.markers = [];
+
             var init = function() {
                 uiGmapGoogleMapApi.then(function () {
                     geoCoderInstance = new google.maps.Geocoder();
@@ -87,14 +104,7 @@
                             vm.userLocation.State = result.State;
                             vm.userLocation.City = result.City;
                             vm.userLocation.Country = result.Country;
-                            zoneService.getRiskZonesByCity(result.City.short_name).then(function(response) {
-                                var markers = response.data.positions;
-                                console.log(markers);
-                                for (var i = 0; i < markers.length; i++) {
-                                    console.log("Trigger");
-                                    placeMarker(markers[i].id, markers[i].latitude, markers[i].longitude);
-                                }
-                            });
+                            getZonesByCity(result.City.short_name);
                         });
                     }, function (error) {
                         alert("No fue posible determinar su ubicación");

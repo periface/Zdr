@@ -18853,3 +18853,66 @@ DEBUG 2016-07-15 15:45:19,528 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        -
 WARN  2016-07-15 15:45:20,163 [88   ] Abp.Logging.LogHelper                    - Can not find 'Login' in localization source 'Zdr'!
 DEBUG 2016-07-15 15:45:20,343 [118  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5242bd70-62a3-40dc-a0a8-5b662b6696ee","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-07-15T15:45:20.3437841-05:00","Properties":{}}
 DEBUG 2016-07-15 15:45:20,353 [120  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5242bd70-62a3-40dc-a0a8-5b662b6696ee
+DEBUG 2016-07-15 15:47:17,267 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-07-15 15:50:08,423 [130  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5242bd70-62a3-40dc-a0a8-5b662b6696ee
+WARN  2016-07-15 15:50:09,176 [131  ] Abp.Logging.LogHelper                    - Can not find 'Login' in localization source 'Zdr'!
+DEBUG 2016-07-15 15:50:09,360 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"3f5aceb9-f5f9-4c70-8e36-278fdeee07e3","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-07-15T15:50:09.3606829-05:00","Properties":{}}
+DEBUG 2016-07-15 15:50:09,368 [133  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 3f5aceb9-f5f9-4c70-8e36-278fdeee07e3
+DEBUG 2016-07-15 15:50:37,308 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 3f5aceb9-f5f9-4c70-8e36-278fdeee07e3
+WARN  2016-07-15 15:50:38,117 [128  ] Abp.Logging.LogHelper                    - Can not find 'Login' in localization source 'Zdr'!
+DEBUG 2016-07-15 15:50:38,364 [131  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e2fe7dc3-1bb7-4c17-b697-0e6918cd9b14","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-07-15T15:50:38.3635829-05:00","Properties":{}}
+DEBUG 2016-07-15 15:50:38,390 [120  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e2fe7dc3-1bb7-4c17-b697-0e6918cd9b14
+DEBUG 2016-07-15 15:52:17,282 [gator] Hangfire.SqlServer.CountersAggregator    - Aggregating records in 'Counter' table...
+DEBUG 2016-07-15 15:53:42,501 [129  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e2fe7dc3-1bb7-4c17-b697-0e6918cd9b14
+WARN  2016-07-15 15:53:43,249 [129  ] Abp.Logging.LogHelper                    - Can not find 'Login' in localization source 'Zdr'!
+DEBUG 2016-07-15 15:53:43,516 [120  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"75a88050-dcd7-4865-981e-22b1e7d7e3f8","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-07-15T15:53:43.5160963-05:00","Properties":{}}
+DEBUG 2016-07-15 15:53:43,533 [128  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 75a88050-dcd7-4865-981e-22b1e7d7e3f8
+WARN  2016-07-15 15:54:19,621 [129  ] Abp.Auditing.AuditingInterceptor         - Could not serialize arguments for method: CreateZone
+WARN  2016-07-15 15:54:19,621 [129  ] Abp.Auditing.AuditingInterceptor         - Newtonsoft.Json.JsonSerializationException: Error getting value from 'ReadTimeout' on 'System.Web.HttpInputStream'. ---> System.InvalidOperationException: Los tiempos de espera no se admiten en esta secuencia.
+   en System.IO.Stream.get_ReadTimeout()
+   en GetReadTimeout(Object )
+   en Newtonsoft.Json.Serialization.DynamicValueProvider.GetValue(Object target)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en Newtonsoft.Json.Serialization.DynamicValueProvider.GetValue(Object target)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeDictionary(JsonWriter writer, IDictionary values, JsonDictionaryContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   en Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   en Newtonsoft.Json.JsonConvert.SerializeObjectInternal(Object value, Type type, JsonSerializer jsonSerializer)
+   en Abp.Auditing.AuditingHelper.Serialize(Object obj) en D:\Halil\GitHub\aspnetboilerplate\src\Abp\Auditing\AuditingHelper.cs:línea 71
+   en Abp.Auditing.AuditingInterceptor.ConvertArgumentsToJson(IInvocation invocation) en D:\Halil\GitHub\aspnetboilerplate\src\Abp\Auditing\AuditingInterceptor.cs:línea 136
+Newtonsoft.Json.JsonSerializationException: Error getting value from 'ReadTimeout' on 'System.Web.HttpInputStream'. ---> System.InvalidOperationException: Los tiempos de espera no se admiten en esta secuencia.
+   en System.IO.Stream.get_ReadTimeout()
+   en GetReadTimeout(Object )
+   en Newtonsoft.Json.Serialization.DynamicValueProvider.GetValue(Object target)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en Newtonsoft.Json.Serialization.DynamicValueProvider.GetValue(Object target)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeDictionary(JsonWriter writer, IDictionary values, JsonDictionaryContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   en Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   en Newtonsoft.Json.JsonConvert.SerializeObjectInternal(Object value, Type type, JsonSerializer jsonSerializer)
+   en Abp.Auditing.AuditingHelper.Serialize(Object obj) en D:\Halil\GitHub\aspnetboilerplate\src\Abp\Auditing\AuditingHelper.cs:línea 71
+   en Abp.Auditing.AuditingInterceptor.ConvertArgumentsToJson(IInvocation invocation) en D:\Halil\GitHub\aspnetboilerplate\src\Abp\Auditing\AuditingInterceptor.cs:línea 136
+DEBUG 2016-07-15 15:54:22,613 [128  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 75a88050-dcd7-4865-981e-22b1e7d7e3f8
+WARN  2016-07-15 15:54:23,425 [132  ] Abp.Logging.LogHelper                    - Can not find 'Login' in localization source 'Zdr'!
+DEBUG 2016-07-15 15:54:23,605 [133  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"84283413-a2f3-48b0-b5ee-c27700f4e131","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-07-15T15:54:23.6041047-05:00","Properties":{}}
+DEBUG 2016-07-15 15:54:23,618 [118  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 84283413-a2f3-48b0-b5ee-c27700f4e131
