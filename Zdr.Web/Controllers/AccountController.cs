@@ -1,4 +1,15 @@
-﻿using System;
+﻿using Abp.Authorization.Users;
+using Abp.AutoMapper;
+using Abp.Configuration.Startup;
+using Abp.Domain.Uow;
+using Abp.Extensions;
+using Abp.Threading;
+using Abp.UI;
+using Abp.Web.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -6,23 +17,11 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Abp.Auditing;
-using Abp.Authorization.Users;
-using Abp.AutoMapper;
-using Abp.Configuration.Startup;
-using Abp.Domain.Uow;
-using Abp.Extensions;
-using Abp.Threading;
-using Abp.UI;
-using Abp.Web.Mvc.Models;
 using Zdr.Authorization.Roles;
 using Zdr.MultiTenancy;
 using Zdr.Users;
 using Zdr.Web.Controllers.Results;
 using Zdr.Web.Models.Account;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
 
 namespace Zdr.Web.Controllers
 {
@@ -96,7 +95,7 @@ namespace Zdr.Web.Controllers
                 returnUrl = returnUrl + returnUrlHash;
             }
 
-            return Json(new MvcAjaxResponse { TargetUrl = returnUrl });
+            return Json(new AjaxResponse { TargetUrl = returnUrl });
         }
 
         private async Task<AbpUserManager<Tenant, Role, User>.AbpLoginResult> GetLoginResultAsync(string usernameOrEmailAddress, string password, string tenancyName)

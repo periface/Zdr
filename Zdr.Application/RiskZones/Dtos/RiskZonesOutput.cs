@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Zdr.RiskZones.Dtos
 {
-    public class RiskZonesOutput : IOutputDto
+    public class RiskZonesOutput
     {
         public List<RiskZonePositionDto> Positions { get; set; }
     }

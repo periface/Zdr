@@ -1,14 +1,13 @@
+using Abp.Auditing;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
-using Abp.Application.Services.Dto;
-using Abp.Auditing;
 using Zdr.MultiTenancy;
 using Zdr.Users;
 
 namespace Zdr.Web.Models.Account
 {
-    public class RegisterViewModel : IInputDto, IValidatableObject
+    public class RegisterViewModel
     {
         /// <summary>
         /// Not required for single-tenant applications.

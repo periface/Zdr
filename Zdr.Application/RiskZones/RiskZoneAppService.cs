@@ -1,6 +1,7 @@
 ﻿using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.UI;
+using Helpers;
 using ImageSaver;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,12 @@ namespace Zdr.RiskZones
         [AbpAuthorize()]
         public async Task<int> CreateZone(RiskZoneInputDto input)
         {
+            input.Images = new List<HttpPostedFileBase>();
+            for (var i = 0; i < input.RequestFiles.Count; i++)
+            {
+                var file = input.RequestFiles[i];
+                input.Images.Add(file);
+            }
             if (!AbpSession.UserId.HasValue) throw new UserFriendlyException("No autorizado");
             var city = await ResolveLocation(input);
 
@@ -124,6 +131,14 @@ namespace Zdr.RiskZones
             {
                 Positions = positions
             };
+        }
+
+        public RiskZonesOutput GetRiskZonesWithDistance(RiskZoneByDistanceParams input)
+        {
+            var data = input;
+            var distance = Distance.HaversineDistance(input.Center, input.Bounds.Northeast, Distance.DistanceUnit.Km);
+
+            return new RiskZonesOutput();
         }
     }
 }

@@ -1,27 +1,25 @@
+using Abp;
+using Abp.Configuration.Startup;
+using Abp.Domain.Uow;
+using Abp.Runtime.Session;
+using Abp.TestBase;
+using Castle.MicroKernel.Registration;
+using Effort;
+using EntityFramework.DynamicFilters;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using Abp;
-using Abp.Collections;
-using Abp.Configuration.Startup;
-using Abp.Domain.Uow;
-using Abp.Modules;
-using Abp.Runtime.Session;
-using Abp.TestBase;
 using Zdr.EntityFramework;
 using Zdr.Migrations.SeedData;
 using Zdr.MultiTenancy;
 using Zdr.Users;
-using Castle.MicroKernel.Registration;
-using Effort;
-using EntityFramework.DynamicFilters;
 
 namespace Zdr.Tests
 {
-    public abstract class ZdrTestBase : AbpIntegratedTestBase
+    public abstract class ZdrTestBase : AbpIntegratedTestBase<ZdrTestModule>
     {
         private DbConnection _hostDb;
         private Dictionary<int, DbConnection> _tenantDbs; //only used for db per tenant architecture
@@ -104,13 +102,6 @@ namespace Zdr.Tests
                 );
         }
 
-        protected override void AddModules(ITypeList<AbpModule> modules)
-        {
-            base.AddModules(modules);
-
-            //Adding testing modules. Depended modules of these modules are automatically added.
-            modules.Add<ZdrTestModule>();
-        }
 
         #region UsingDbContext
 
@@ -256,7 +247,7 @@ namespace Zdr.Tests
         }
 
         #endregion
-        
+
         /// <summary>
         /// Gets current user if <see cref="IAbpSession.UserId"/> is not null.
         /// Throws exception if it's null.

@@ -9,5 +9,6 @@ namespace Zdr.RiskZones
         Task<int> CreateZone(RiskZoneInputDto input);
         RiskZoneInputDto GetZoneForEdit(int id);
         RiskZonesOutput GetRiskZonesByCity(string cityCode);
+        RiskZonesOutput GetRiskZonesWithDistance(RiskZoneByDistanceParams input);
     }
 }

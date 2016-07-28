@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Abp;
 using Abp.Web;
 using Castle.Facilities.Logging;
+using System;
 
 namespace Zdr.Web
 {
-    public class MvcApplication : AbpWebApplication
+    public class MvcApplication : AbpWebApplication<ZdrWebModule>
     {
         protected override void Application_Start(object sender, EventArgs e)
         {

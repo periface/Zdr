@@ -1,11 +1,10 @@
-﻿using Abp.Application.Services.Dto;
-using Castle.Components.DictionaryAdapter;
+﻿using Castle.Components.DictionaryAdapter;
 using System.Collections.Generic;
 using System.Web;
 
 namespace Zdr.RiskZones.Dtos
 {
-    public class RiskZoneInputDto : IInputDto
+    public class RiskZoneInputDto
     {
         public RiskZoneInputDto()
         {
@@ -22,5 +21,6 @@ namespace Zdr.RiskZones.Dtos
         public string CountryLongName { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
+        public HttpFileCollectionBase RequestFiles { get; set; }
     }
 }

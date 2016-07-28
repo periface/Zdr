@@ -1,9 +1,8 @@
-﻿using System;
-using Abp;
+﻿using Abp;
 using Abp.Collections.Extensions;
 using Abp.Dependency;
-using Castle.Core.Logging;
 using Castle.Facilities.Logging;
+using System;
 
 namespace Zdr.Migrator
 {
@@ -15,7 +14,7 @@ namespace Zdr.Migrator
         {
             ParseArgs(args);
 
-            using (var bootstrapper = new AbpBootstrapper())
+            using (var bootstrapper = AbpBootstrapper.Create<ZdrMigratorModule>())
             {
                 bootstrapper.IocManager.IocContainer
                     .AddFacility<LoggingFacility>(f => f.UseLog4Net()
